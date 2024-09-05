@@ -62,11 +62,51 @@ public class UserDAOImpl implements IUserDAO {
 
     @Override
     public boolean isUserValid(String username, String password) throws UserDAOException {
-        return false;
+        String sql = "SELECT * FROM users WHERE username = ?";
+        User user = null;
+        ResultSet rs;
+
+        try (Connection connection = DBUtil.getConnection();
+             PreparedStatement ps = connection.prepareStatement(sql)) {
+
+            ps.setString(1, username);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                user = new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"));
+            } else {
+                return false;
+            }
+            return SecUtil.isPasswordValid(password, user.getPassword());
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // logging
+            throw new UserDAOException("SQL error in is user valid for username:  " + username);
+        }
     }
 
     @Override
     public boolean isEmailExists(String username) throws UserDAOException {
-        return false;
+        String sql = "SELECT count(*) FROM users WHERE username = ?";
+        User user = null;
+        ResultSet rs;
+        int count = 0;
+
+        try (Connection connection = DBUtil.getConnection();
+             PreparedStatement ps = connection.prepareStatement(sql)) {
+
+            ps.setString(1, username);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                count = rs.getInt(1);
+            }
+
+            return count > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // logging
+            throw new UserDAOException("SQL error for user with username:  " + username);
+        }
     }
 }
