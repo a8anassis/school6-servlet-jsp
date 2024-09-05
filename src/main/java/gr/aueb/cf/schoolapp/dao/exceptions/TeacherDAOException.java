@@ -1,4 +1,4 @@
-package gr.aueb.cf.schoolapp.dao.exception;
+package gr.aueb.cf.schoolapp.dao.exceptions;
 
 import java.io.Serial;
 

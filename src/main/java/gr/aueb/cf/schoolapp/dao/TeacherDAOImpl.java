@@ -1,6 +1,6 @@
 package gr.aueb.cf.schoolapp.dao;
 
-import gr.aueb.cf.schoolapp.dao.exception.TeacherDAOException;
+import gr.aueb.cf.schoolapp.dao.exceptions.TeacherDAOException;
 import gr.aueb.cf.schoolapp.model.Teacher;
 import gr.aueb.cf.schoolapp.service.util.DBUtil;
 
@@ -103,6 +103,8 @@ public class TeacherDAOImpl implements ITeacherDAO {
             throw new TeacherDAOException("SQL error in get by id with id:  " + id);
         }
     }
+
+
 
     @Override
     public List<Teacher> getFilteredTeachers(String firstname, String lastname) throws TeacherDAOException {

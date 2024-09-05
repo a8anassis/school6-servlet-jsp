@@ -1,6 +1,6 @@
 package gr.aueb.cf.schoolapp.dao;
 
-import gr.aueb.cf.schoolapp.dao.exception.TeacherDAOException;
+import gr.aueb.cf.schoolapp.dao.exceptions.TeacherDAOException;
 import gr.aueb.cf.schoolapp.model.Teacher;
 
 import java.util.List;
@@ -10,6 +10,7 @@ public interface ITeacherDAO {
     Teacher update(Teacher teacher) throws TeacherDAOException;
     void delete(Integer id) throws TeacherDAOException;
     Teacher getById(Integer id) throws TeacherDAOException;
+
     List<Teacher> getFilteredTeachers(String firstname, String lastname)
             throws TeacherDAOException;
 }
