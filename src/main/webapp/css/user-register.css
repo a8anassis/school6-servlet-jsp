@@ -1,0 +1,29 @@
+.main-content {
+    margin: 5px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+    min-height: 60vh;
+    width: 80vw;
+}
+
+.form {
+    display: flex;
+    place-content: center;
+    width: 70vw;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 1px solid black;
+}
+
+.validation-error {
+    color: red;
+}
+
+.m-bottom {
+    margin-bottom: 15px;
+}

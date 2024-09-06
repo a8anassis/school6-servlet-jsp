@@ -1,9 +1,3 @@
-<%@ page import="gr.aueb.cf.schoolapp.dao.ITeacherDAO" %>
-<%@ page import="gr.aueb.cf.schoolapp.dao.TeacherDAOImpl" %>
-<%@ page import="gr.aueb.cf.schoolapp.service.ITeacherService" %>
-<%@ page import="gr.aueb.cf.schoolapp.service.TeacherServiceImpl" %>
-<%@ page import="gr.aueb.cf.schoolapp.model.Teacher" %>
-<%@ page import="gr.aueb.cf.schoolapp.dao.exceptions.TeacherDAOException" %>
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
@@ -27,7 +21,6 @@
             <c:if test="${sessionScope.username != null}">
                 <a class="log-out" href="${pageContext.request.contextPath}/logout">Έξοδος</a>
             </c:if>
-
         </div>
     </div>
     <div class="line">

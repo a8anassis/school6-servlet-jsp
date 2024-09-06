@@ -42,11 +42,3 @@ body {
     background-color: var(--green-color-hover);
 }
 
-.footer {
-    background-color: var(--light-color);
-    border-top: 5px solid var(--dark-blue);
-    padding-top: 25px;
-    padding-left: 10rem;
-    text-align: left;
-    min-height: 15vh;
-}
