@@ -23,7 +23,7 @@ public class UserValidator<T> {
         Map<String, String> errors = new HashMap<>();
 
         if (!dto.getPassword().equals(dto.getConfirmedPassword())) {
-            errors.put("confirmedPassword", "Το password και το confirmedPassword δεν είναι ίδια.");
+            errors.put("confirmPassword", "Το password και το confirmedPassword δεν είναι ίδια.");
         }
 
         if (dto.getPassword().length() < 5 || dto.getPassword().length() > 32 ) {
