@@ -3,4 +3,36 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
+
+    <session-config>
+        <session-timeout>20</session-timeout>
+    </session-config>
+
+    <filter>
+        <filter-name>GrFilter</filter-name>
+        <filter-class>gr.aueb.cf.schoolapp.filter.GRFilter</filter-class>
+        <init-param>
+            <param-name>priority</param-name>
+            <param-value>1</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>GrFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>gr.aueb.cf.schoolapp.filter.AuthFilter</filter-class>
+        <init-param>
+            <param-name>priority</param-name>
+            <param-value>2</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/teachers/*</url-pattern>
+    </filter-mapping>
+
+
 </web-app>
