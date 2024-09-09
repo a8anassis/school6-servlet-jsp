@@ -10,7 +10,7 @@ public class DBUtil {
     private static Connection connection;
 
     static {
-        ds.setUrl("jdbc:mysql://localhost:3306/schooldb6?serverTimeZone=UTC");
+        ds.setUrl("jdbc:mysql://localhost:3306/school6db?serverTimezone=UTC");
         ds.setUsername("userdb6");
         ds.setPassword(System.getenv("PASS_DB6"));
         ds.setInitialSize(10);

@@ -18,7 +18,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Map;
 
-@WebServlet("users/register")
+@WebServlet("/users/register")
 public class UserRegisterController extends HttpServlet {
 
     private final IUserDAO userDAO = new UserDAOImpl();

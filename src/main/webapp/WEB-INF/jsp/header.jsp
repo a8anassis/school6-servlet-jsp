@@ -11,7 +11,6 @@
     <div class="outer">
         <div class="items">
             <a href=""><img class="gov-gr-logo" src="${pageContext.request.contextPath}/img/gov_header_logo.svg" alt="" width="40" height="auto"></a>
-            <!-- <a href=""><img src="./art2.png" alt="" width="40" height="auto"></a> -->
             <span class="title">Coding Factory - Education Reinvented </span>
         </div>
         <div class="login-name">

@@ -13,6 +13,11 @@ public abstract class BaseUserDTO {
         this.confirmedPassword = confirmedPassword;
     }
 
+    public BaseUserDTO(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
     public String getUsername() {
         return username;
     }
