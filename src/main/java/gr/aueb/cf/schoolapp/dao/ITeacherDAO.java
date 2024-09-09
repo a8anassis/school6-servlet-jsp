@@ -10,7 +10,6 @@ public interface ITeacherDAO {
     Teacher update(Teacher teacher) throws TeacherDAOException;
     void delete(Integer id) throws TeacherDAOException;
     Teacher getById(Integer id) throws TeacherDAOException;
-
     List<Teacher> getFilteredTeachers(String firstname, String lastname)
             throws TeacherDAOException;
 }

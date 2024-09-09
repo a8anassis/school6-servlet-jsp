@@ -18,7 +18,7 @@
                     <h1 class="text-grey">Login</h1>
                 </div>
                 <div class=container>
-                    <c:if test="${requestScope.isError eq 'true'}">
+                    <c:if test="${requestScope.isErrror eq 'true'}">
                         <p style="color: red">Login Error</p>
                     </c:if>
                 </div>
@@ -43,8 +43,6 @@
                 <p>Don't have an account? <a href="${pageContext.request.contextPath}/users/register">Sign up here!</a></p>
             </div>
         </div>
-
-
 
     <%@include file="footer.jsp"%>
 </body>

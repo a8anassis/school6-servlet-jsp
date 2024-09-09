@@ -1,0 +1,74 @@
+:root {
+    --green-color: #006736; /* Green */
+    --green-color-hover: #218838; /* Darker Green */
+    --light-color: #e8e8f2; /* Light Background */
+    --dark-color: #343a40; /* Dark Text */
+    --dark-blue: #3b3b97;
+}
+
+.main-content {
+    padding-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.form {
+    display: flex;
+    place-content: center;
+    width: 70vw;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 1px solid black;
+}
+
+body {
+    font-size: 1.2rem;
+}
+
+table {
+    /*display: inline-block;*/
+    width: 90vw;
+    margin-top: 40px;
+    border: 1px solid black;
+    /*border-collapse: collapse;*/
+}
+
+table thead th {
+    background: var(--dark-blue);
+    color: #fff;
+    border: 1px solid black;
+}
+
+.custom-button-green {
+    background-color: var(--green-color);
+    margin-left: 15px;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.6rem;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from links */
+    display: inline-block; /* Allows padding to work correctly on <a> */
+}
+
+.reset-button {
+    background-color: var(--light-color);
+    color: var(--dark-blue);
+    border: none;
+    padding: 0.6rem 1.6rem;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from links */
+    display: inline-block; /* Allows padding to work correctly on <a> */
+}
+
+.m-bottom {
+    margin-bottom: 20px;
+}
+
+th, td {
+    text-align: center;
+}
