@@ -15,7 +15,7 @@ public class UserDAOImpl implements IUserDAO {
 
     @Override
     public User insert(User user) throws UserDAOException {
-        String sql = "INSERT INTO users (username, password) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
 
         try (Connection connection = DBUtil.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
