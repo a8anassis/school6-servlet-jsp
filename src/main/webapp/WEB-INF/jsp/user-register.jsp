@@ -24,6 +24,15 @@
                 <input class="m-bottom" type="password" name="confirmPassword" value="${requestScope.userRegisterDTO.confirmPassword}" required placeholder="Confirm Password">
                 <p class="validation-error">${requestScope.confirmPasswordMessage}</p>
             </div>
+            <div class="row m-bottom">
+                <select class="m-bottom" name="role">
+                    <option value="Teacher">Καθηγητής</option>
+                    <option value="Student">Μαθητής</option>
+                    <option value="Admin">Διαχειριστής</option>
+                </select>
+                <p class="validation-error">${requestScope.roleMessage}</p>
+            </div>
+
             <div class="row">
                 <button type="submit">Εγγραφή</button>
             </div>
