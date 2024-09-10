@@ -42,7 +42,7 @@ public class TeachersViewController extends HttpServlet {
 
             if (teachers.isEmpty()) {
                 request.setAttribute("message", "Teachers not found");
-                request.getRequestDispatcher("/WEB-INF/jsp/teachers/jsp").forward(request, response);
+                request.getRequestDispatcher("/WEB-INF/jsp/teachers.jsp").forward(request, response);
                 return;
             }
 
@@ -51,6 +51,7 @@ public class TeachersViewController extends HttpServlet {
         } catch (TeacherDAOException e) {
             message = e.getMessage();
             request.setAttribute("message", message);
+            request.getRequestDispatcher("/WEB-INF/jsp/teachers.jsp").forward(request, response);
         }
 
     }

@@ -125,6 +125,7 @@ public class TeacherDAOImpl implements ITeacherDAO {
                 teachers.add(teacher);
             }
             // Logging
+            teachers.forEach(System.out::println);
             return teachers;
         } catch (SQLException e) {
             e.printStackTrace();
