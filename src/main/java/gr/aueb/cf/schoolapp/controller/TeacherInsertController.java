@@ -46,30 +46,34 @@ public class TeacherInsertController extends HttpServlet {
         String lastname = req.getParameter("lastname").trim();
         insertDTO = new TeacherInsertDTO(firstname, lastname);
 
-        // Validate dto
-        errors = TeacherValidator.validate(insertDTO);
 
-        if (!errors.isEmpty()) {
-            firstnameMessage = errors.getOrDefault("firstname", "");
-            lastnameMessage = errors.getOrDefault("lastname", "");
-
-            req.setAttribute("firstnameMessage", firstnameMessage);
-            req.setAttribute("lastnameMessage", lastnameMessage);
-            req.setAttribute("insertDTO", insertDTO);
-            req.getRequestDispatcher("/WEB-INF/jsp/teacher-inserted.jsp");
-            return;
-        }
-
-        // Call the service
         try {
+            // Validate dto
+            errors = TeacherValidator.validate(insertDTO);
+
+            if (!errors.isEmpty()) {
+                firstnameMessage = errors.getOrDefault("firstname", "");
+                lastnameMessage = errors.getOrDefault("lastname", "");
+
+                req.setAttribute("firstnameMessage", firstnameMessage);
+                req.setAttribute("lastnameMessage", lastnameMessage);
+                req.setAttribute("insertDTO", insertDTO);
+                req.getRequestDispatcher("/WEB-INF/jsp/teacher-insert.jsp")
+                        .forward(req, resp);
+                return;
+            }
+
+            // Call the service
             teacher = teacherService.insertTeacher(insertDTO);
             TeacherReadOnlyDTO readOnlyDTO = mapToReadOnlyDTO(teacher);
             req.setAttribute("teacherInfo", readOnlyDTO);
-            req.getRequestDispatcher("/WEB-INF/jsp/teacher-inserted.jsp").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/jsp/teacher-inserted.jsp")
+                    .forward(req, resp);
         } catch (TeacherDAOException e) {
             errorMessage = e.getMessage();
             req.setAttribute("errorMessage", errorMessage);
-            req.getRequestDispatcher("/WEB-INF/jsp/teacher-insert.jsp").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/jsp/teacher-insert.jsp")
+                    .forward(req, resp);
         }
     }
 
