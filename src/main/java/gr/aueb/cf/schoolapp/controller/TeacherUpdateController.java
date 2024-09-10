@@ -40,7 +40,8 @@ public class TeacherUpdateController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
 
         Integer id = Integer.parseInt(req.getParameter("id").trim());
         String firstname = req.getParameter("firstname").trim();
